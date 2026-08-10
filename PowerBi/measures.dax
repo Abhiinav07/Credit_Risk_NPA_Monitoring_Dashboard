@@ -1,0 +1,9 @@
+-- Paste these measures into Power BI
+Total Loans = COUNTROWS(loan_portfolio)
+Total Exposure = SUM(loan_portfolio[loan_amount])
+NPA Accounts = CALCULATE([Total Loans], loan_portfolio[npa_flag] = 1)
+NPA Ratio = DIVIDE([NPA Accounts], [Total Loans])
+Avg PD = AVERAGE(loan_portfolio[pd_estimate])
+Expected Loss = SUMX(loan_portfolio, loan_portfolio[pd_estimate] * 0.45 * loan_portfolio[loan_amount])
+High Risk Exposure = CALCULATE([Total Exposure], loan_portfolio[risk_band] IN {"High","Very High"})
+Early Warning Accounts = CALCULATE([Total Loans], loan_portfolio[days_past_due] >= 30, loan_portfolio[days_past_due] < 90)
