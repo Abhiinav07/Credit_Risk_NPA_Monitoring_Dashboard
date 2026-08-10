@@ -1,0 +1,15 @@
+field,definition,example
+loan_id,Unique loan identifier,LN100000
+application_date,Loan application / origination date,2024-05-17
+annual_income,Applicant annual income,750000
+loan_amount,Approved/originated loan principal,500000
+credit_score,Credit bureau score,720
+dti_pct,Debt-to-income ratio (%),32.5
+prior_delinquencies,Historical delinquency count,1
+ltv_pct,Loan-to-value ratio (%),68.2
+days_past_due,Current maximum days past due,90
+npa_flag,NPA indicator; 1 if DPD >= 90,1
+default_flag,Synthetic observed default outcome,1
+risk_score,Composite risk score (0-100; higher is riskier),61.4
+risk_band,Low / Moderate / High / Very High,High
+pd_estimate,Model probability of default (0-1),0.1234
